@@ -1,6 +1,6 @@
 import React from 'react'
-import { atomWithStore } from 'jotai-redux'
 import { useAtom } from 'jotai/react'
+import { atomWithStore } from 'jotai-redux'
 import { legacy_createStore as createStore } from 'redux'
 
 const initialState = { count: 0 }
