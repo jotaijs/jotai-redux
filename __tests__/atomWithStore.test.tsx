@@ -16,13 +16,20 @@ it('count state', async () => {
   const storeAtom = atomWithStore(store)
   store.dispatch({ type: 'INC' })
 
+  let dispatched
+
   const Counter = () => {
     const [state, dispatch] = useAtom(storeAtom)
 
     return (
       <>
         count: {state.count}
-        <button onClick={() => dispatch({ type: 'INC' })}>button</button>
+        <button
+          onClick={() => {
+            dispatched = dispatch({ type: 'INC' })
+          }}>
+          button
+        </button>
       </>
     )
   }
@@ -38,6 +45,7 @@ it('count state', async () => {
   fireEvent.click(getByText('button'))
   await findByText('count: 2')
   expect(store.getState().count).toBe(2)
+  expect(dispatched).toEqual({ type: 'INC' })
 
   act(() => {
     store.dispatch({ type: 'INC' })

@@ -16,7 +16,7 @@ export function atomWithStore<State, A extends Action = AnyAction>(
   const derivedAtom = atom(
     (get) => get(baseAtom),
     (_get, _set, action: A) => {
-      store.dispatch(action)
+      return store.dispatch(action)
     }
   )
   return derivedAtom
