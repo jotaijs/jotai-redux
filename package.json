@@ -80,6 +80,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "peerDependencies": {
-    "jotai": ">=1.11.0"
+    "jotai": ">=1.11.0",
+    "redux": ">=4.0.0"
   }
 }
