@@ -12,7 +12,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "jotai-redux": ["./src/index.js"]
+      "jotai-redux": ["./src/index.ts"]
     }
   },
   "exclude": ["dist", "examples"]
